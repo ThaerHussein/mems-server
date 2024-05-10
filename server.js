@@ -14,7 +14,7 @@ const jsonData = require('./data.json')
 const app = express();
 
 app.use(cors());
-process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const DataBase= process.env.PG_DATABASE
 const UserName= process.env.PG_USER
 const password= process.env.PG_PASSWORD
