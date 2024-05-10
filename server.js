@@ -15,11 +15,14 @@ const app = express();
 
 app.use(cors());
 
-const PORT = process.env.PORT;
+const DataBase= process.env.PG_DATABASE
+const UserName= process.env.PG_USER
+const password= process.env.PG_PASSWORD
+const Host = process.env.PG_HOST
+const Port= process.env.PG_PORT
 
-const apiKey = process.env.APIKEY;
+const client = new pg.Client(`postgresql://${UserName}:${password}@${Host}:${Port}/${DataBase}`)
 
-const client = new pg.Client("postgresql://localhost:5432/mems");
 
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
