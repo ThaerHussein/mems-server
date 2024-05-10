@@ -14,7 +14,7 @@ const jsonData = require('./data.json')
 const app = express();
 
 app.use(cors());
-
+process.env.PORT || 3000;
 const DataBase= process.env.PG_DATABASE
 const UserName= process.env.PG_USER
 const password= process.env.PG_PASSWORD
@@ -140,7 +140,7 @@ function errorHandler(error,req,res){
 
 client.connect()
 .then(()=>{
-    app.listen(8081, () =>
-    console.log(`listening on ${8081}`)
+    app.listen(PORT, () =>
+    console.log(`listening on ${PORT}`)
     );
 })
