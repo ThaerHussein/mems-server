@@ -14,14 +14,9 @@ const jsonData = require('./data.json')
 const app = express();
 
 app.use(cors());
-const PORT = process.env.PORT || 3000;
-const DataBase= process.env.PG_DATABASE
-const UserName= process.env.PG_USER
-const password= process.env.PG_PASSWORD
-const Host = process.env.PG_HOST
-const Port= process.env.PG_PORT
+const PORT = process.env.PORT;
 
-const client = new pg.Client(`postgresql://${UserName}:${password}@${Host}:${Port}/${DataBase}`)
+const client = new pg.Client(process.env.DATABASE_URL)
 
 
 var bodyParser = require('body-parser');
