@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT;
 
-const client = new pg.Client(process.env.DATABASE_URL)
+const client = new pg.Client("postgresql://postgres:kQZNrMirNEXpnRfOcZxDjDpTRuGQErQW@monorail.proxy.rlwy.net:19551/railway")
 
 
 var bodyParser = require('body-parser');
