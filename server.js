@@ -15,8 +15,8 @@ const app = express();
 
 app.use(cors());
 const PORT = process.env.PORT;
-
-const client = new pg.Client(`${process.env.DATABASE_URL}`)
+const DATABASE_URL= process.env.DATABASE_URL;
+const client = new pg.Client(`${DATABASE_URL}`)
 
 
 var bodyParser = require('body-parser');
